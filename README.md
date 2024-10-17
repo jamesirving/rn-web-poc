@@ -1,32 +1,35 @@
-# Turborepo react-native starter
+# React Native POC
 
-This is an official starter Turborepo.
+## Getting Started
 
-## Using this example
+### EAS Setup
 
-Run the following command:
+Follow [the steps](https://docs.expo.dev/get-started/set-up-your-environment/?platform=ios&device=simulated&mode=development-build#create-a-development-build) to setup eas with this app
 
-```sh
-npx create-turbo@latest -e with-react-native-web
+### Install dependencies
+
+```bash
+yarn
 ```
 
-## What's inside?
+### Running the Application
 
-This Turborepo includes the following packages/apps:
+For the Expo app, run the following command:
 
-### Apps and Packages
+```bash
+yarn run:expo
+```
 
-- `native`: a [react-native](https://reactnative.dev/) app built with [expo](https://docs.expo.dev/)
-- `web`: a [Next.js](https://nextjs.org/) app built with [react-native-web](https://necolas.github.io/react-native-web/)
-- `@/components/ui`: a stub [react-native](https://reactnative.dev/) component library shared by both `web` and `native` applications
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+For the Next.js app, run the following command:
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+```bash
+yarn run:next
+```
 
-### Utilities
+## Project Structure
 
-This Turborepo has some additional tools already setup for you:
-
-- [Expo](https://docs.expo.dev/) for native development
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [Prettier](https://prettier.io) for code formatting
+- `app/next`: Contains the Next.js application.
+- `app/expo`: Contains the Expo application.
+- `packages/components`: Shared components used across platforms.
+- `packages/screens`: Shared screens that can be used in both Next.js and Expo projects.
+- `packages/shared`: Shared assets

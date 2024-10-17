@@ -1,4 +1,4 @@
-# React Native POC
+# React Native for Web POC
 
 ## Getting Started
 

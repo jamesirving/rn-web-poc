@@ -39,7 +39,7 @@ const Table = React.forwardRef<React.ElementRef<typeof ExpoTable>, ITableProps>(
   ({ className, ...props }, ref) => {
     return (
       <ExpoTable
-        ref={ref}
+        ref={ref as React.LegacyRef<typeof View> | undefined}
         className={tableStyle({ class: className })}
         {...props}
       />
@@ -59,7 +59,7 @@ const TableHeader = React.forwardRef<
   return (
     <TableHeaderContext.Provider value={contextValue}>
       <ExpoTHead
-        ref={ref}
+        ref={ref as React.LegacyRef<typeof View> | undefined}
         className={tableHeaderStyle({ class: className })}
         {...props}
       />
@@ -73,7 +73,7 @@ const TableBody = React.forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <ExpoTBody
-      ref={ref}
+      ref={ref as React.LegacyRef<typeof View> | undefined}
       className={tableBodyStyle({ class: className })}
       {...props}
     />
@@ -92,7 +92,7 @@ const TableFooter = React.forwardRef<
   return (
     <TableFooterContext.Provider value={contextValue}>
       <ExpoTFoot
-        ref={ref}
+        ref={ref as React.LegacyRef<typeof View> | undefined}
         className={tableFooterStyle({ class: className })}
         {...props}
       />
@@ -132,7 +132,7 @@ const TableRow = React.forwardRef<
 
   return (
     <ExpoTR
-      ref={ref}
+      ref={ref as React.LegacyRef<typeof View> | undefined}
       className={tableRowStyleStyle({
         isHeaderRow,
         isFooterRow,
@@ -172,7 +172,7 @@ const TableCaption = React.forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <ExpoTCaption
-      ref={ref}
+      ref={ref as React.LegacyRef<typeof View> | undefined}
       className={tableCaptionStyle({ class: className })}
       {...props}
     />

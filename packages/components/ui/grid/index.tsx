@@ -8,12 +8,14 @@ import React, {
 } from 'react';
 import type { VariantProps } from '@gluestack-ui/nativewind-utils';
 import { View, Dimensions, Platform, ViewProps } from 'react-native';
-import { gridStyle, gridItemStyle } from './styles';
 import { cssInterop } from 'nativewind';
+
+import { gridStyle, gridItemStyle } from './styles';
 import {
   useBreakpointValue,
   getBreakPointValue,
-} from '@gluestack-ui/nativewind-utils/useBreakpointValue';
+} from '../utils/use-break-point-value';
+
 const { width } = Dimensions.get('window');
 
 const GridContext = createContext<any>({});
@@ -309,8 +311,7 @@ const GridItem = forwardRef<React.ElementRef<typeof View>, IGridItemProps>(
         gridItemClass={gridItemClass}
         className={gridItemStyle({
           class:
-            className + ' ' + Platform.select({ web: gridItemClass ?? '' }) ??
-            '',
+            className + ' ' + Platform.select({ web: gridItemClass ?? '' }),
         })}
         {...props}
         style={[
